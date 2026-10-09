@@ -361,6 +361,46 @@ body {
 .clue-list li.key-evidence .clue-name { color: var(--accent); }
 .clue-list li.key-evidence .clue-num { color: var(--accent); }
 
+/* 线索表格 */
+.clue-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5px;
+  margin-bottom: 8px;
+}
+.clue-table th {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-dim);
+  font-weight: 600;
+  padding: 5px 6px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 10px;
+}
+.clue-table td {
+  padding: 4px 6px;
+  border-bottom: 1px dashed rgba(255,255,255,0.05);
+  vertical-align: top;
+  line-height: 1.4;
+}
+.clue-table tr:last-child td { border-bottom: none; }
+.clue-table .col-num {
+  width: 24px;
+  font-family: "Consolas", monospace;
+  color: var(--text-dim);
+  text-align: center;
+}
+.clue-table .col-name {
+  width: 38%;
+  font-weight: 600;
+  color: var(--text);
+}
+.clue-table .col-trigger {
+  color: var(--text-dim);
+}
+.clue-table tr.key-evidence .col-num,
+.clue-table tr.key-evidence .col-name { color: var(--accent); }
+
 /* ===== A/B选择 ===== */
 .ab-row {
   display: grid;
@@ -677,62 +717,77 @@ body {
 
     <div class="clue-category">
       <div class="clue-category-title"><span>身份确认</span><span class="count">2条</span></div>
-      <ul class="clue-list">
-        <li><span class="clue-num">01</span><span class="clue-name">跨时空身份确认</span><span class="clue-desc">触发方式：和哥哥聊天，证明身份（讲脚踏车的事）</span></li>
-        <li><span class="clue-num">02</span><span class="clue-name">哥哥知道自己会死</span><span class="clue-desc">触发方式：告诉哥哥他会在48小时后死亡</span></li>
-      </ul>
+      <table class="clue-table">
+        <thead><tr><th class="col-num">#</th><th class="col-name">线索名称</th><th class="col-trigger">触发方式</th></tr></thead>
+        <tbody>
+          <tr><td class="col-num">01</td><td class="col-name">跨时空身份确认</td><td class="col-trigger">和哥哥聊天，证明身份（讲脚踏车的事）</td></tr>
+          <tr><td class="col-num">02</td><td class="col-name">哥哥知道自己会死</td><td class="col-trigger">告诉哥哥他会在48小时后死亡</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="clue-category">
       <div class="clue-category-title"><span>案件线索</span><span class="count">10条</span></div>
-      <ul class="clue-list">
-        <li><span class="clue-num">03</span><span class="clue-name">林小冉失踪案</span><span class="clue-desc">触发方式：浏览器搜索"林小冉"或"幸福里小区"</span></li>
-        <li><span class="clue-num">04</span><span class="clue-name">哥哥在查林小冉案</span><span class="clue-desc">触发方式：和哥哥对话中了解到</span></li>
-        <li><span class="clue-num">05</span><span class="clue-name">幸福里小区地下室是人贩子窝点</span><span class="clue-desc">触发方式：浏览器搜索"幸福里小区"</span></li>
-        <li><span class="clue-num">06</span><span class="clue-name">林小冉最后出现在幸福里附近</span><span class="clue-desc">触发方式：查看林小冉寻人启事详情</span></li>
-        <li><span class="clue-num">07</span><span class="clue-name">监控数据位置</span><span class="clue-desc">触发方式：哥哥调查幸福里小区后分享</span></li>
-        <li><span class="clue-num">08</span><span class="clue-name">坤达科技测试账号</span><span class="clue-desc">触发方式：苏记者聊天记录中获得</span></li>
-        <li><span class="clue-num">09</span><span class="clue-name">哥哥手机被监听</span><span class="clue-desc">触发方式：浏览器搜索"监控"/"手机监听"，点击深度调查文章</span></li>
-        <li><span class="clue-num">10</span><span class="clue-name">T-24小时哥哥被跟踪</span><span class="clue-desc">触发方式：倒计时到24小时自动触发</span></li>
-        <li><span class="clue-num">11</span><span class="clue-name">哥哥被老周约出去</span><span class="clue-desc">触发方式：查到老周是内鬼后，老周发短信约哥哥</span></li>
-        <li><span class="clue-num">12</span><span class="clue-name">城郊废弃工厂可疑</span><span class="clue-desc">触发方式：浏览器搜索"城郊废弃工厂"</span></li>
-      </ul>
+      <table class="clue-table">
+        <thead><tr><th class="col-num">#</th><th class="col-name">线索名称</th><th class="col-trigger">触发方式</th></tr></thead>
+        <tbody>
+          <tr><td class="col-num">03</td><td class="col-name">林小冉失踪案</td><td class="col-trigger">浏览器搜索"林小冉"或"幸福里小区"</td></tr>
+          <tr><td class="col-num">04</td><td class="col-name">哥哥在查林小冉案</td><td class="col-trigger">和哥哥对话中了解到</td></tr>
+          <tr><td class="col-num">05</td><td class="col-name">幸福里小区地下室是人贩子窝点</td><td class="col-trigger">浏览器搜索"幸福里小区"</td></tr>
+          <tr><td class="col-num">06</td><td class="col-name">林小冉最后出现在幸福里附近</td><td class="col-trigger">查看林小冉寻人启事详情</td></tr>
+          <tr><td class="col-num">07</td><td class="col-name">监控数据位置</td><td class="col-trigger">哥哥调查幸福里小区后分享</td></tr>
+          <tr><td class="col-num">08</td><td class="col-name">坤达科技测试账号</td><td class="col-trigger">苏记者聊天记录中获得</td></tr>
+          <tr><td class="col-num">09</td><td class="col-name">哥哥手机被监听</td><td class="col-trigger">浏览器搜索"监控"/"手机监听"，点击深度调查文章</td></tr>
+          <tr><td class="col-num">10</td><td class="col-name">T-24小时哥哥被跟踪</td><td class="col-trigger">倒计时到24小时自动触发</td></tr>
+          <tr><td class="col-num">11</td><td class="col-name">哥哥被老周约出去</td><td class="col-trigger">查到老周是内鬼后，老周发短信约哥哥</td></tr>
+          <tr><td class="col-num">12</td><td class="col-name">城郊废弃工厂可疑</td><td class="col-trigger">浏览器搜索"城郊废弃工厂"</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="clue-category">
       <div class="clue-category-title"><span>人物线索</span><span class="count">9条</span></div>
-      <ul class="clue-list">
-        <li><span class="clue-num">13</span><span class="clue-name">赵秉坤是坤达集团老板</span><span class="clue-desc">触发方式：浏览器搜索"赵秉坤"</span></li>
-        <li><span class="clue-num">14</span><span class="clue-name">坤达科技做安防监控</span><span class="clue-desc">触发方式：浏览器搜索"坤达科技"</span></li>
-        <li><span class="clue-num">15</span><span class="clue-name">坤达技术部非法监听</span><span class="clue-desc">触发方式：浏览器搜索"监控"，点击手机监听文章</span></li>
-        <li><span class="clue-num">16</span><span class="clue-name">副市长秘书张建国负责城建</span><span class="clue-desc">触发方式：浏览器搜索"副市长秘书"或"张建国"</span></li>
-        <li><span class="clue-num">17</span><span class="clue-name">副市长秘书底细</span><span class="clue-desc">触发方式：把张建国信息发给哥哥，哥哥去调查后分享</span></li>
-        <li><span class="clue-num">18</span><span class="clue-name">副市长秘书更多罪证</span><span class="clue-desc">触发方式：银行系统管理员权限深度查询</span></li>
-        <li><span class="clue-num">19</span><span class="clue-name">老周是内鬼</span><span class="clue-desc">触发方式：运营商系统查询老周通话记录</span></li>
-        <li><span class="clue-num">20</span><span class="clue-name">老周被威胁的短信</span><span class="clue-desc">触发方式：运营商系统深度调查（方案B）</span></li>
-        <li><span class="clue-num">21</span><span class="clue-name">王强手机定位</span><span class="clue-desc">触发方式：运营商系统用locate命令定位139****1234</span></li>
-      </ul>
+      <table class="clue-table">
+        <thead><tr><th class="col-num">#</th><th class="col-name">线索名称</th><th class="col-trigger">触发方式</th></tr></thead>
+        <tbody>
+          <tr><td class="col-num">13</td><td class="col-name">赵秉坤是坤达集团老板</td><td class="col-trigger">浏览器搜索"赵秉坤"</td></tr>
+          <tr><td class="col-num">14</td><td class="col-name">坤达科技做安防监控</td><td class="col-trigger">浏览器搜索"坤达科技"</td></tr>
+          <tr><td class="col-num">15</td><td class="col-name">坤达技术部非法监听</td><td class="col-trigger">浏览器搜索"监控"，点击手机监听文章</td></tr>
+          <tr><td class="col-num">16</td><td class="col-name">副市长秘书张建国负责城建</td><td class="col-trigger">浏览器搜索"副市长秘书"或"张建国"</td></tr>
+          <tr><td class="col-num">17</td><td class="col-name">副市长秘书底细</td><td class="col-trigger">把张建国信息发给哥哥，哥哥去调查后分享</td></tr>
+          <tr><td class="col-num">18</td><td class="col-name">副市长秘书更多罪证</td><td class="col-trigger">银行系统管理员权限深度查询</td></tr>
+          <tr><td class="col-num">19</td><td class="col-name">老周是内鬼</td><td class="col-trigger">运营商系统查询老周通话记录</td></tr>
+          <tr><td class="col-num">20</td><td class="col-name">老周被威胁的短信</td><td class="col-trigger">运营商系统深度调查（方案B）</td></tr>
+          <tr><td class="col-num">21</td><td class="col-name">王强手机定位</td><td class="col-trigger">运营商系统用locate命令定位139****1234</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="clue-category">
       <div class="clue-category-title"><span>情感线索</span><span class="count">5条</span></div>
-      <ul class="clue-list">
-        <li><span class="clue-num">22</span><span class="clue-name">老周女儿被抓</span><span class="clue-desc">触发方式：哥哥备忘录最后一条</span></li>
-        <li><span class="clue-num">23</span><span class="clue-name">老周女儿被关位置</span><span class="clue-desc">触发方式：综合王强定位和废弃工厂信息推断</span></li>
-        <li><span class="clue-num">24</span><span class="clue-name">哥哥调查笔记</span><span class="clue-desc">触发方式：文件管理中解锁调查资料.zip（密码061522）</span></li>
-        <li><span class="clue-num">25</span><span class="clue-name">哥哥最后语音</span><span class="clue-desc">触发方式：结局A/B播放哥哥最后录音，播放完后解锁</span></li>
-        <li><span class="clue-num">26</span><span class="clue-name">最后的通话记录</span><span class="clue-desc">触发方式：运营商系统查到赵秉坤与秘书的通话</span></li>
-      </ul>
+      <table class="clue-table">
+        <thead><tr><th class="col-num">#</th><th class="col-name">线索名称</th><th class="col-trigger">触发方式</th></tr></thead>
+        <tbody>
+          <tr><td class="col-num">22</td><td class="col-name">老周女儿被抓</td><td class="col-trigger">哥哥备忘录最后一条</td></tr>
+          <tr><td class="col-num">23</td><td class="col-name">老周女儿被关位置</td><td class="col-trigger">综合王强定位和废弃工厂信息推断</td></tr>
+          <tr><td class="col-num">24</td><td class="col-name">哥哥调查笔记</td><td class="col-trigger">文件管理中解锁调查资料.zip（密码061522）</td></tr>
+          <tr><td class="col-num">25</td><td class="col-name">哥哥最后语音</td><td class="col-trigger">结局A/B播放哥哥最后录音，播放完后解锁</td></tr>
+          <tr><td class="col-num">26</td><td class="col-name">最后的通话记录</td><td class="col-trigger">运营商系统查到赵秉坤与秘书的通话</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="clue-category">
       <div class="clue-category-title"><span>关键证据</span><span class="count">4条</span></div>
-      <ul class="clue-list">
-        <li class="key-evidence"><span class="clue-num">27</span><span class="clue-name">关键录音（赵秉坤密谋）</span><span class="clue-desc">触发方式：坤达科技内部录音系统recover后播放</span></li>
-        <li class="key-evidence"><span class="clue-num">28</span><span class="clue-name">银行转账记录</span><span class="clue-desc">触发方式：银行系统查询坤达集团转账记录</span></li>
-        <li class="key-evidence"><span class="clue-num">29</span><span class="clue-name">赵秉坤和人贩子通话录音</span><span class="clue-desc">触发方式：坤达科技深度扫描恢复</span></li>
-        <li class="key-evidence"><span class="clue-num">30</span><span class="clue-name">神秘通话录音</span><span class="clue-desc">触发方式：坤达科技深度扫描恢复（未知号码）</span></li>
-      </ul>
+      <table class="clue-table">
+        <thead><tr><th class="col-num">#</th><th class="col-name">线索名称</th><th class="col-trigger">触发方式</th></tr></thead>
+        <tbody>
+          <tr class="key-evidence"><td class="col-num">27</td><td class="col-name">关键录音（赵秉坤密谋）</td><td class="col-trigger">坤达科技内部录音系统recover后播放</td></tr>
+          <tr class="key-evidence"><td class="col-num">28</td><td class="col-name">银行转账记录</td><td class="col-trigger">银行系统查询坤达集团转账记录</td></tr>
+          <tr class="key-evidence"><td class="col-num">29</td><td class="col-name">赵秉坤和人贩子通话录音</td><td class="col-trigger">坤达科技深度扫描恢复</td></tr>
+          <tr class="key-evidence"><td class="col-num">30</td><td class="col-name">神秘通话录音</td><td class="col-trigger">坤达科技深度扫描恢复（未知号码）</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
